@@ -1,5 +1,5 @@
 class Fibonacci
-  def fibonacci_series(max_val)
+  def fib_up_to(max_val)
     current_val, next_val = 0, 1 
     while current_val <= max_val
       yield current_val
