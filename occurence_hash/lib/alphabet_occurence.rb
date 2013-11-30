@@ -1,7 +1,7 @@
-class AlphabetOccurence
-  def count(input_str)
-    string_hash = Hash.new(0)
-    input_str.upcase.gsub(/[A-Z]/i) { |char| string_hash[char] += 1 }
-    string_hash
+class String
+  def count_alphabet_occurence
+    alphabet_occurence_collection = Hash.new(0)
+    upcase.gsub(/[A-Z]/) { |char| alphabet_occurence_collection[char] += 1 }
+    alphabet_occurence_collection
   end
 end
