@@ -1,9 +1,10 @@
 class Array
-  def to_length_hash
-    length_hash = Hash.new { |hash, key| hash[key] = Array.new }
+  def group_by_length
+    length_groups = Hash.new { |hash, key| hash[key] = Array.new }
     for element in self
-      length_hash[element.to_s.size].push(element)
+      element_size = element.to_s.size
+      length_groups[element_size].push(element)
     end
-    length_hash
+    length_groups
   end
 end
