@@ -1,5 +1,5 @@
 require_relative '../lib/string'
 
-puts 'Enter a string'
-input_string = gets.chomp
-puts "String reversed by each word -> \n#{ input_string.reverse_by_words }"
+puts 'Enter a sentence'
+sentence = gets.chomp
+puts "Reversed sentence -> \n#{ sentence.reverse }"
