@@ -1,5 +1,5 @@
 class String
   def palindrome?
-    self == self.reverse
+    upcase == reverse.upcase
   end
 end
