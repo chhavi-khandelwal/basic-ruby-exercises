@@ -1,7 +1,11 @@
 require_relative '../lib/string'
-require_relative '../lib/palindrome'
 
-puts 'Enter the string'
-text = gets.chomp
-palindrome = Palindrome.new
-text =~ /[^q]/i ? (palindrome.check_palindromic(text) ?	(puts "#{ text } is a Palindrome") : (puts "#{ text } is not a Palindrome")) : nil
+loop do
+  puts 'Enter the string'
+  input_string = gets.chomp
+  if input_string =~ /^q$/i
+    break
+  else
+    puts "#{ input_string } is #{ input_string.palindrome?  ? '' : 'not' } a Palindrome"
+  end
+end
