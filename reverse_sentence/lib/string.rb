@@ -1,5 +1,5 @@
 class String
-  def reverse_by_words
-    split(/\s/).reverse.join(' ')
+  def reverse
+    split.reverse.join(' ')
   end
 end
