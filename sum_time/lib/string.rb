@@ -1,6 +1,6 @@
 class String
   def valid?
-    match(/^(?<hours>[01]\d|2[0-3]):(?<mins>[0-5]\d):(?<secs>[0-5]\d)$/) ? true : (
+    match(/^(?<hours>[01]?\d|2[0-3]):(?<mins>[0-5]?\d):(?<secs>[0-5]?\d)$/) ? true : (
       puts 'Enter a valid time'
       false
     )
