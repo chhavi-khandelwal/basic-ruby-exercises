@@ -2,7 +2,7 @@ class Time
   def add_to(*time_n)
     total_time = self
     i = 0
-    while (i < time_n.length) do
+    while (i < time_n.length)
       time2_in_secs = time_n[i].hour * 3600 + time_n[i].min * 60 + time_n[i].sec
       i += 1
       total_time += time2_in_secs
