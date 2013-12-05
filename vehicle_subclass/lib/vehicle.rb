@@ -1,13 +1,12 @@
 class Vehicle
-  attr_reader :name
-  attr_accessor :price
+  attr_writer :price
 
   def initialize(name, price)
     @name = name
     @price = price
   end
 
-  def show_contents
+  def to_s
     puts "#{ @name } = Rs.#{ @price }"
   end
 end
