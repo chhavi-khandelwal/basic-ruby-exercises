@@ -1,0 +1,2 @@
+class NameNotCapitalizedException < StandardError
+end
