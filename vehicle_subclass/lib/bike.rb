@@ -7,7 +7,6 @@ class Bike < Vehicle
   end
 
   def to_s
-    super
-    puts "Dealer: #{ @dealer }"
+    super + ", Dealer: #{ @dealer }"
   end
 end
