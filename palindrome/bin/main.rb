@@ -2,6 +2,7 @@ require_relative '../lib/string'
 
 quit_regexp = /^q$/i
 trimmed_string_regexp = /^\s*$/
+
 loop do
   puts 'Enter the string'
   input_string = gets.chomp
