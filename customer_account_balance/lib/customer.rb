@@ -42,4 +42,5 @@ class Customer
       puts 'Enter a valid amount'
     end
   end
+  
 end
