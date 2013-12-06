@@ -7,6 +7,6 @@ class Vehicle
   end
 
   def to_s
-    puts "#{ @name } = Rs.#{ @price }"
+    "Name: #{ @name }, Price: Rs.#{ @price }"
   end
 end
