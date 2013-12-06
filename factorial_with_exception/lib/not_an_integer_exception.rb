@@ -1,0 +1,2 @@
+class NotAnIntegerException < StandardError
+end
