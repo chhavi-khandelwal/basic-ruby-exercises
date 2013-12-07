@@ -24,7 +24,7 @@ class FileHelper
   def store_employee_record
     employee_record = Hash.new { |hash, key| hash[key] = [] }
     read_employee_record.each do |employee|
-      employee_record[employee.designation + 's'] << "#{ employee.name }(EmpId:#{ employee.emp_id })"
+      employee_record[employee.designation + 's'] << "#{ employee.name } (EmpId:#{ employee.emp_id })"
     end
     employee_record
   end
