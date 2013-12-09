@@ -1,4 +1,4 @@
-require_relative '../lib/PascalTriangleSeries'
+require_relative '../lib/pascal_triangle_series'
 
-pascalTriangleSeries = PascalTriangleSeries.new
-pascalTriangleSeries.print_upto(6) { |pascal_series_term| print " #{ pascal_series_term } "}
+pascal_triangle_series = PascalTriangleSeries.new
+pascal_triangle_series.print_upto(6) { |pascal_series_term| print " #{ pascal_series_term } "}
