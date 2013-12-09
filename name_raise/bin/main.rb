@@ -1,17 +1,17 @@
 require_relative '../lib/name'
-require_relative '../lib/name_not_capitalized_exception'
-require_relative '../lib/name_not_null_exception'
+
 
 puts 'Enter firstname'
 firstname = gets.chomp.strip
 puts 'Enter secondname'
 secondname = gets.chomp.strip
-name = Name.new(firstname, secondname)
 
 begin
-puts name.full_name
+  name = Name.new(firstname, secondname)
 rescue NameNotNullException => message
   puts message
 rescue NameNotCapitalizedException => message
   puts message
+else
+  puts name.full_name
 end
