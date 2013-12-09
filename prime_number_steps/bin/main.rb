@@ -1,10 +1,13 @@
-require_relative '../lib/integer'
+require_relative '../lib/prime_number'
 
 puts 'Enter a number upto which you want to find the prime nos.'
-integer = gets.chomp
-puts "prime_numbers_upto #{ integer }"
-if integer.to_i <= 1
+number = gets.chomp
+if number !~ /^[\d]+$/i
+  puts 'Enter a valid number'
+elsif number.to_i <= 1
   puts 'Prime no. does not exist'
 else
-  integer.to_i.prime_numbers_upto { |number| puts number }
+  prime_number = PrimeNumber.new
+  puts "prime_numbers_upto #{ number }"
+  prime_number.print_upto(number.to_i) { |number| puts number }
 end
