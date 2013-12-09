@@ -1,8 +1,7 @@
 class Array
   def reverse_iterate
-    array = self.reverse
-    for i in 0..array.size
-      yield array[i]
+    for i in 1..self.size
+      yield self[-i]
     end
   end
 end
