@@ -2,7 +2,7 @@ require_relative '../lib/prime_number'
 
 puts 'Enter a number upto which you want to find the prime nos.'
 number = gets.chomp
-if number !~ /^[\d]+$/i
+if number !~ /^[\d]+$/
   puts 'Enter a valid number'
 elsif number.to_i <= 1
   puts 'Prime no. does not exist'
