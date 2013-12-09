@@ -4,7 +4,8 @@ class String
     digits_range = '0'..'9'
     lowercase_range = 'a'..'z'
     uppercase_range = 'A'..'Z'
-    self.each_char { |char| case char
+    self.each_char do |char|
+      case char
       when digits_range
         character_type_collection['digits'] += 1
       when lowercase_range
@@ -13,8 +14,8 @@ class String
         character_type_collection['uppercase'] += 1
       else
         character_type_collection['special-characters'] += 1
-     end
-    }
+      end
+    end
     character_type_collection
   end
 end
