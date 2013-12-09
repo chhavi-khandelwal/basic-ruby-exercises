@@ -9,7 +9,7 @@ class PascalTriangleSeries
   end
 
   def factorial(n)
-    factorial = (1..n).to_a.inject(:*)
+    (1..n).to_a.inject(:*)
   end
 
 end
