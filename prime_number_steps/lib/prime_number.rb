@@ -1,4 +1,3 @@
-require 'prime'
 class PrimeNumber
   def print_upto(limit)
     2.step(limit) do |i|
