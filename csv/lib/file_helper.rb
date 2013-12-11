@@ -1,16 +1,14 @@
 require_relative 'employee'
+require_relative 'string'
 
 class FileHelper
 
-  def write_employee_record(to_file, employee_record)
-    File.open(to_file, 'w') do |employee_file|
-      employee_record.each do |designation, employees|
-        if employees.length > 1
-          employee_file.puts "\n#{ designation + 's' }:"
-        else
-          employee_file.puts "\n#{ designation }:"
-        end
-        employee_file.puts employees
+  def self.write_employee_records(to_file, records)
+    File.open(to_file, 'w') do |file|
+      records.each do |designation, employees|
+        count = employees.length
+        file.puts designation.pluralize(count)
+        file.puts employees
       end
     end
   end
