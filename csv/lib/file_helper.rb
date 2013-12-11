@@ -1,4 +1,3 @@
-require_relative 'employee'
 require_relative 'string'
 
 class FileHelper
