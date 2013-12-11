@@ -15,8 +15,7 @@ def store_n_times
   loop do
     n_times << get_valid_time
     puts 'Want to enter another?(y/n)'
-    response = true if gets.chomp == 'n'
-    break if response
+    break if gets.chomp == 'n'
   end
   n_times
 end
