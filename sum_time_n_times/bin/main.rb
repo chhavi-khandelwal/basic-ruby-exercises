@@ -1,15 +1,26 @@
-require_relative '../lib/time'
-require_relative '../lib/string'
+require_relative '../lib/military_time'
+
+def get_valid_time
+  input_time = ''
+  loop do
+    input_time = gets.chomp
+    break if MilitaryTime.valid?(input_time)
+    puts 'Enter a valid time'
+  end
+  input_time
+end
+
+def store_n_time
+  loop do
+    MilitaryTime.new(get_valid_time)
+    puts 'Want to enter another?(y/n)'
+    response = true if gets.chomp == 'n'
+    break if response
+  end
+end
 
 puts 'Enter no. of 24 hour time values you want to add'
-time_count = gets.chomp
-*time_n = []
-puts 'Enter time in 24 hour time format (h:m:s)'
-time1 = ''
-time1 = time1.get_valid_time.parse_time
-
-(time_count.to_i - 1).times do
-  input_time = ''
-  time_n << input_time.get_valid_time.parse_time
-end
-puts time1.add_to(*time_n)
+store_n_time
+net_time, day = MilitaryTime.sum
+MilitaryTime.all.each { |time| print "#{ time.hour }:#{ time.min }:#{ time.sec } "}
+print "-> #{ day == 0 ? '' : "#{ day } day & " }#{ net_time.hour }:#{ net_time.min }:#{ net_time.sec }\n"
