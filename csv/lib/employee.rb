@@ -1,6 +1,5 @@
 class Employee
-  attr_reader :designation, :emp_id, :name
-  @@employees = []
+  attr_reader :designation
 
   def initialize(name, emp_id, designation)
     @name = name.chomp
@@ -8,15 +7,14 @@ class Employee
     @designation = designation.chomp
   end
 
-  def self.all(from_file)
-    File.readlines(from_file).each do |record|
-      @@employees << Employee.new(*record.split(', '))
-    end
-    @@employees
+  def self.all(from_file, headers)
+    employees_data = File.readlines(from_file)
+    employees_data.shift if headers == true
+    employees_data.map { |record| Employee.new(*record.split(', ')) }
   end
 
   def to_s
-    "#{ name } (EmpId:#{ emp_id })"
+    "#{ @name } (EmpId:#{ @emp_id })"
   end
 
 end
