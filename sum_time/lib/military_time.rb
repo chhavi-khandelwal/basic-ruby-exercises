@@ -4,7 +4,7 @@ require_relative 'invalid_time_exception'
 class MilitaryTime
   FORMAT = /^(?<hours>[01]?\d|2[0-3]):(?<mins>[0-5]?\d):(?<secs>[0-5]?\d)$/
   attr_reader :time
-  
+
   def initialize(time)
     raise InvalidTimeException, 'Invalid time' if !valid?(time)
     @time = time
@@ -16,9 +16,13 @@ class MilitaryTime
     time2_in_secs = time2.hour * 3600 + time2.min * 60 + time2.sec
     time = time1 + time2_in_secs
     day = time.day - time1.day
-    [time1, time2, day, time]
+    [day, time]
   end
   
+  def to_s
+    time
+  end
+
   private
   def valid?(time)
     time.match(FORMAT)
