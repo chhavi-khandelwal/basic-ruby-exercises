@@ -6,15 +6,15 @@ class MilitaryTime
   attr_reader :time
 
   def initialize(time)
-    raise InvalidTimeException, 'Invalid time' if !valid?(time)
     @time = time
+    raise InvalidTimeException, 'Invalid time' if !valid?
   end
 
-  def self.add(time1, time2)
-    time1 = Time.parse(time1.time)
-    time2 = Time.parse(time2.time)
-    time2_in_secs = time2.hour * 3600 + time2.min * 60 + time2.sec
-    time = time1 + time2_in_secs
+  def +(other_time)
+    time1 = Time.parse(self.time)
+    other_time = Time.parse(other_time.time)
+    other_time_in_secs = other_time.hour * 3600 + other_time.min * 60 + other_time.sec
+    time = time1 + other_time_in_secs
     day = time.day - time1.day
     [day, time]
   end
@@ -24,8 +24,8 @@ class MilitaryTime
   end
 
   private
-  def valid?(time)
-    time.match(FORMAT)
-  end
+    def valid?
+      time.match(FORMAT)
+    end
 
 end
