@@ -1,5 +1,5 @@
 class String
   def pluralize(count)
-    count > 1 ? "\n#{ self }s" : "\n#{ self }"
+    count > 1 ? self + 's' : self
   end
 end
