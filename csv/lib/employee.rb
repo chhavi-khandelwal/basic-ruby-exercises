@@ -14,7 +14,7 @@ class Employee
   end
 
   def to_s
-    "#{ @name } (EmpId:#{ @emp_id })"
+    "#{ @name } (EmpId: #{ @emp_id })"
   end
 
 end
