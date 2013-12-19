@@ -8,6 +8,7 @@ class FileHelper
         count = employees.length
         file.puts designation.pluralize(count)
         file.puts employees
+        file.puts "\n"
       end
     end
   end
