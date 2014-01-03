@@ -1,10 +1,10 @@
 class Dictionary
   def initialize(*words)
-    @words = words.flatten.map(&:downcase)
+    @words = words.flatten
   end
 
-  def find(match)
-    match.downcase!.strip!
-    @words.select { |word| word.start_with?(match) }
+  def find(pattern)
+    pattern = Regexp.new("^#{ pattern.strip }", true)
+    @words.select { |word|  word.match(pattern) }
   end
 end
